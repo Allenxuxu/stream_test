@@ -1,10 +1,13 @@
 package question_test
 
 import (
-	"stream_test"
+	"strings"
 	"testing"
 
+	"stream_test"
+
 	"github.com/Pallinder/go-randomdata"
+	"github.com/stretchr/testify/assert"
 	"github.com/sumory/idgen"
 )
 
@@ -48,7 +51,8 @@ func TestQuestion2Sub2(t *testing.T) {
 
 func TestQuestion3Sub1(t *testing.T) {
 	answer := stream_test.Question3Sub1(str, 20)
-	t.Log(answer)
+
+	assert.Equal(t, strings.Repeat(str, 20), answer)
 }
 
 func init() {
